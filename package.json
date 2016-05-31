@@ -1,0 +1,23 @@
+{
+  "name": "@luispablo/test-helpers",
+  "version": "1.0.0",
+  "description": "Some small and simple helpers for my unit tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luispablo/test-helpers.git"
+  },
+  "keywords": [
+    "test",
+    "helpers"
+  ],
+  "author": "@luispablo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luispablo/test-helpers/issues"
+  },
+  "homepage": "https://github.com/luispablo/test-helpers#readme"
+}
