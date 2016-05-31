@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/luispablo/test-helpers/issues"
   },
-  "homepage": "https://github.com/luispablo/test-helpers#readme"
+  "homepage": "https://github.com/luispablo/test-helpers#readme",
+  "devDependencies": {
+    "tape": "^4.5.1"
+  }
 }
