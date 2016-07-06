@@ -8,15 +8,22 @@ Some small and simple helpers for my unit tests
 How to use
 
 ```javascript
-import { DispatchMock } from "@luispablo/test-helpers";
+import { DispatchMock } from "luispablo-test-helpers";
 
 ...
 
-const expectedActions = ["set item", "remove item"]; // The redux actions you want dispatched
+const expectedActions = [{ type: "set item", payload: "some text" }, { type: "remove item" }];
 const dispatch = DispatchMock(assert, expectedActions, true);
-// the first param is the tape assert Object
-// the last param is optional, if set to true makes an assert.comment with the actions dispatched
 ```
+
+The first param (**assert**) is the tape assert object. The expected actions is
+and array of objects, each one containing a type and a payload. As you can see the payload is
+optional, but the type is required. For each action called it will check that **a part**
+of the action type has the type you provided in them and, if it matches and it
+has a payload, checks for a **===** of the action payload to the expected one.
+
+The last param set wether to log via ```assert.comment``` the triggered action
+or not (if it's not provided it wont log)
 
 ## FetcherMock
 
@@ -24,7 +31,7 @@ This component is a function that works as the new fetch API function, so when y
 So, first do
 
 ```javascript
-import { FetcherMock } from "@luispablo/test-helpers";
+import { FetcherMock } from "luispablo-test-helpers";
 ```
 
 And then, for an **HTTP 200** response with a JSON body do
@@ -56,7 +63,7 @@ This will fall into the ```catch``` part of the promise, with an **error** param
 This is a HTML 5 window local storage mock, to use in your tests. Just do:
 
 ```javascript
-import { LocalStorageMock } from "@luispablo/test-helpers";
+import { LocalStorageMock } from "luispablo-test-helpers";
 
 ...
 
