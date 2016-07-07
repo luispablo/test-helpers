@@ -1,6 +1,6 @@
 {
   "name": "luispablo-test-helpers",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Some small and simple helpers for my unit tests",
   "main": "index.js",
   "scripts": {
