@@ -16,9 +16,13 @@ test("DispatchMock - check action payload", function (assert) {
 	assert.end();
 });
 
-// const DispatchMock = function (assert, actions, debug) {
-// 	return function (action) {
-// 		if (debug) assert.comment(`Dispateched action: ${action.type}`);
-// 		assert.ok(actions.some(a => action.type.indexOf(a) >= 0), `Action '${action.type}' triggered`);
-// 	};
-// };
+test("DispatchMock - show payload of unexpected action", function (assert) {
+	assert.plan(1);
+	var assertMock = {
+		fail: function (message) {
+			assert.equal(message, "Action test type not expected (payload: {\"message\":\"test payload\"})", "Includes the payload in the reported message");
+		}
+	};
+	var dispatch = DispatchMock(assertMock, []);
+	dispatch({ type: TEST_TYPE, payload: { message: TEST_PAYLOAD } });
+});
