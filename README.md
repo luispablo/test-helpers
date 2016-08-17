@@ -58,6 +58,22 @@ const fetcher = FetcherMock({ error: { code: 1, message: "Network error" } });
 
 This will fall into the ```catch``` part of the promise, with an **error** param with code 1 and the message shown above.
 
+### Data stored by the FetcherMock
+
+The mocked fetcher receives a URL and, optionally, some options (like `method`, `headers`, `body`, and so on).
+It saves the URL and the options in its **invokedURL** and **providedOptions** properties.
+
+```javascript
+var fetcher = FetcherMock();
+
+// your code here, and later you can do
+
+console.log(fetcher.invokedURL); // This should give you the actual URL invoked
+console.log(fetcher.providedOptions); // Here you get the second param given to fetch
+```
+
+**If you want to see al available options check https://github.com/github/fetch**
+
 ## LocalStorageMock
 
 This is a HTML 5 window local storage mock, to use in your tests. Just do:

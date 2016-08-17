@@ -23,3 +23,19 @@ test("FetcherMock - reject", function (assert) {
 	assert.plan(1);
 	fetcher("").catch(function (err) { assert.deepEqual(err, error, "The given error is thrown"); });
 });
+
+test("FetcherMock - invokedURL", function (assert) {
+	var fetcher = FetcherMock();
+	var URL = "http://test.sample";
+	fetcher(URL);
+	assert.equal(fetcher.invokedURL, URL, "The invoked URL stored in the fetcher");
+	assert.end();
+});
+
+test("FetcherMock - providedOptions", function (assert) {
+	var fetcher = FetcherMock();
+	var options = { test: "a", dummy: 3 };
+	fetcher("some url", options);
+	assert.deepEqual(fetcher.providedOptions, options, "The second param given to fetch");
+	assert.end();
+});
