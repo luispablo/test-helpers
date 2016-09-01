@@ -10,6 +10,15 @@ test("FetcherMock - HTTP 200", function (assert) {
 	});
 });
 
+test("FetcherMock - text()", function (assert) {
+	var dummyText = "Some dummy text";
+	var fetcher = FetcherMock({ text: dummyText });
+	assert.plan(1);
+	fetcher().then(function (res) {
+		res.text().then(function (data) { assert.equal(data, dummyText, "The expected text"); });
+	});
+});
+
 test("FetcherMock - HTTP 404", function (assert) {
 	var NOT_FOUND = 404;
 	var fetcher = FetcherMock({ status: NOT_FOUND });

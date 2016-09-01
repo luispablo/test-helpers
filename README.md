@@ -41,6 +41,13 @@ const fetcher = FetcherMock({ json: { name: "Tom" } });
 ```
 
 So, ```fetch("anyURL")``` will resolve a response with a ```json()``` function that returns ```{ name: "Tom" }```.
+Or, the same but with **text**:
+
+```javascript
+const fetcher = FetcherMock({ text: { "some dummy text" } });
+```
+
+This will resolve a response with a ```text()``` function that returns ```"some dummy text"```.
 
 To resolve the promise, but with different HTTP code do
 
