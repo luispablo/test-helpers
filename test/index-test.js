@@ -1,12 +1,12 @@
 const test = require("tape");
 const index = require("../index");
-const DispatchMock = require("../lib/DispatchMock");
-const FetcherMock = require("../lib/FetcherMock");
-const LocalStorageMock = require("../lib/LocalStorageMock");
+const dispatchMock = require("../lib/dispatchMock");
+const fetcherMock = require("../lib/fetcherMock");
+const localStorageMock = require("../lib/localStorageMock");
 
 test("index - imports", assert => {
-	assert.equal(index.DispatchMock, DispatchMock, "require dispatch mock");
-	assert.equal(index.FetcherMock, FetcherMock, "require fetcher mock");
-	assert.equal(index.LocalStorageMock, LocalStorageMock, "require local storage mock");
+	assert.equal(index.dispatchMock, dispatchMock, "require dispatch mock");
+	assert.equal(index.fetcherMock, fetcherMock, "require fetcher mock");
+	assert.equal(index.localStorageMock, localStorageMock, "require local storage mock");
 	assert.end();
 });

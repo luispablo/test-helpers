@@ -1,5 +1,5 @@
-const DispatchMock = require("./lib/DispatchMock");
-const FetcherMock = require("./lib/FetcherMock");
-const LocalStorageMock = require("./lib/LocalStorageMock");
+const dispatchMock = require("./lib/dispatchMock");
+const fetcherMock = require("./lib/fetcherMock");
+const localStorageMock = require("./lib/localStorageMock");
 
-module.exports = { DispatchMock, FetcherMock, LocalStorageMock };
+module.exports = { dispatchMock, fetcherMock, localStorageMock };

@@ -1,16 +1,16 @@
 const test = require("tape");
-const LocalStorageMock = require("../lib/LocalStorageMock");
+const localStorageMock = require("../lib/localStorageMock");
 
-test("LocalStorageMock - setItem / getItem", assert => {
-	const storage = LocalStorageMock();
+test("localStorageMock - setItem / getItem", assert => {
+	const storage = localStorageMock();
 	assert.ok(storage.getItem("key") === null, "First it's null");
 	storage.setItem("key", "value");
 	assert.equal(storage.getItem("key"), "value", "Now the value is set");
 	assert.end();
 });
 
-test("LocalStorageMock - removeItem", assert => {
-	const storage = LocalStorageMock();
+test("localStorageMock - removeItem", assert => {
+	const storage = localStorageMock();
 	storage.setItem("key", "value");
 	assert.ok(storage.getItem("key") !== null, "It's set");
 	storage.removeItem("key");
